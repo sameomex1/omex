@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help Center - Mafana Onganiza Bhooo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #0b3d0b; /* Dark green */
+      color: white;
+    }
+
+    header {
+      background-color: #064d06;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      background-color: #116611;
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background-color: #0d4d0d;
+    }
+
+    .faq-answer {
+      display: none;
+      background-color: #1e1e1e;
+      margin-top: 5px;
+      padding: 15px;
+      border-radius: 10px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background-color: #111;
+      color: #ccc;
+    }
+    p{
+    text-align: left;
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Help Center</h1>
+    <p>Find answers to common questions</p>
+  </header>
+
+  <div class="container">
+    <div class="faq-item">
+      <div class="faq-question">What is Mafana Onganiza Bhooo?</div>
+      <div class="faq-answer">Mafana Onganiza Bhooo is a group that provides fun, design, and social services for the youth and beyond.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How do I create an account?</div>
+      <div class="faq-answer">You can click on the "Log In" or "Sign Up" link from the homepage and fill out your details.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I contact the team?</div>
+      <div class="faq-answer">You can reach us via email at omexblack@gmail.com or call 099 731 6129.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is there a fee to join?</div>
+      <div class="faq-answer">No, joining Mafana Onganiza Bhooo is free for everyone interested in what we offer.</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Mafana Onganiza Bhooo - All Rights Reserved
+  </footer>
+
+  <script>
+    // Script to toggle answers
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>

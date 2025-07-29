@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Mafana Onganiza Bhoo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #001409;
+      color: #d4f7d4;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #064d26;
+      color: #a8d5a3;
+      padding: 25px 20px 80px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      user-select: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+      position: relative;
+    }
+
+    .nav-btn {
+      background-color: #a8d5a3;
+      color: #064d26;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus {
+      background-color: #74b868;
+      color: white;
+      transform: scale(1.05);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: #a8d5a3;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .menu-toggle:hover {
+      background-color: #0f3f20;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 10px;
+      background-color: #064d26;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      padding: 8px 12px;
+      color: #a8d5a3;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #74b868;
+      color: white;
+    }
+
+    .dropdown-content.show {
+      display: flex;
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main {
+      margin-top: 190px;
+      padding: 20px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      color: #d4f7d4;
+      user-select: none;
+    }
+
+    .card {
+      background-color: #0b2e0b;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgb(215, 252, 8);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      letter-spacing: 1.3px;
+      color: #a8d5a3;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #c9eac9;
+    }
+
+    .btn-primary {
+      margin-top: 25px;
+      background-color: #a8d5a3;
+      color: #064d26;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 6px 12px rgba(168, 213, 163, 0.7);
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #74b868;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #064d26;
+      color: #a8d5a3;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.5rem;
+        padding: 15px 10px 80px;
+      }
+
+      .nav-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+
+      .dropdown-content {
+        right: auto;
+        left: 10px;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  MAFANA ONGANIZA BHOOO
+  <nav>
+    <a href="fake home.html" class="nav-btn">Home</a>
+    <a href="service.html" class="nav-btn">Services</a>
+    <a href="Contact.html" class="nav-btn">Contact</a>
+    <button class="menu-toggle" onclick="toggleDropdown()">☰</button>
+
+    <!-- Dropdown items -->
+    <div class="dropdown-content" id="dropdownContent">
+      <a href="about.html">About</a>
+      <a href="fake image.html">Image</a>
+      <a href="Help center.html">Help Center</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Our Story</h2>
+    <p>
+      Mafana Onganiza Bhoo is your go-to platform for chilled vibes and creative energy. 
+      We aim to bring you the freshest content, coolest ideas, and a community that keeps the spirit alive.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Our Mission</h2>
+    <p>
+      To inspire and empower everyone to stay warm and energized through positive vibes, 
+      great content, and an unforgettable online experience.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:omexblack@gmail.com" style="color: #a8d5a3; text-decoration: none;">omexblack@gmail.com</a></p>
+    <p>Phone: 099 731 6129</p>
+    <button class="btn-primary" onclick="window.location.href='Contact.html'">Get In Touch</button>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Mafana Onganiza Bhoo — All rights reserved.
+</footer>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownContent");
+    dropdown.classList.toggle("show");
+  }
+
+  window.addEventListener("click", function (e) {
+    const toggle = document.querySelector(".menu-toggle");
+    const dropdown = document.getElementById("dropdownContent");
+    if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+

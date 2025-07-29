@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mafana Oganiza Bhoo</title>
+  <style>
+    /* Basic Reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #5a8078; /* matched homepage background */
+      color: #e6f0f0; /* softer white */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #3d665f; /* darker teal */
+      color: #e6f0f0;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    header:hover {
+      background-color: #496e68;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    /* Hamburger menu icon with animation */
+    .menu-toggle {
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      background: #e6f0f0;
+      display: block;
+      height: 3px;
+      border-radius: 2px;
+      transition: all 0.4s ease;
+      transform-origin: center;
+    }
+
+    /* Hamburger animation to X */
+    nav.open ~ header .menu-toggle span:nth-child(1),
+    nav.open + header .menu-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    nav.open ~ header .menu-toggle span:nth-child(2),
+    nav.open + header .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    nav.open ~ header .menu-toggle span:nth-child(3),
+    nav.open + header .menu-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* We'll fix toggle animation with JS class on nav, so we do it in JS */
+
+    /* Navigation menu */
+    nav {
+      position: fixed;
+      top: 55px;
+      right: 0;
+      background-color: #3d665f;
+      width: 220px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      box-shadow: -3px 3px 10px rgba(0,0,0,0.4);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 999;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav.open {
+      max-height: 400px;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 25px;
+      color: #e6f0f0;
+      text-decoration: none;
+      border-bottom: 1px solid #577a74;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    nav a:hover {
+      background-color: #4a9a91;
+      box-shadow: inset 5px 0 10px #85c9be;
+      color: #cce6e1;
+    }
+
+    nav a:last-child {
+      margin-top: 10px;
+      background-color: #4a9a91;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #4a9a91cc;
+      font-weight: 700;
+    }
+
+    nav a:last-child:hover {
+      background-color: #2f5b55;
+      box-shadow: 0 0 12px #2f5b55cc;
+      color: #e6f0f0;
+    }
+
+    /* Main content wrapper to avoid header overlap */
+    main {
+      margin-top: 75px;
+      padding: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background-color: #446b65;
+      border-radius: 15px;
+      padding: 35px 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    /* Hover effect for sections */
+    section:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      font-size: 1.8rem;
+      user-select: text;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      margin-top: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    a.login-link {
+      display: inline-block;
+      background-color: #2f5b55;
+      color: #cce6e1;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 12px #2f5b55cc;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 15px;
+      user-select: none;
+    }
+
+    a.login-link:hover {
+      background-color: #4a9a91;
+      box-shadow: 0 0 18px #4a9a91cc;
+      color: #e6f0f0;
+    }
+
+    footer {
+      background-color: #3d665f;
+      color: #cce6e1;
+      text-align: center;
+      padding: 18px 20px;
+      font-size: 0.95rem;
+      letter-spacing: 1.1px;
+      box-shadow: inset 0 1px 5px #577a74;
+      user-select: none;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .modal img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #a1d9d3;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      font-size: 42px;
+      color: #cce6e1;
+      text-decoration: none;
+      font-weight: 700;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #4a9a91;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      nav {
+        width: 100%;
+        max-height: 0;
+        border-radius: 0;
+      }
+
+      nav.open {
+        max-height: 450px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mafana Oganiza Bhoo</h1>
+    <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <nav id="navMenu" aria-label="Primary navigation">
+    <a href="fake home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="Contact.html">Contact</a>
+    <a href=".html">Image</a>
+    <a href="Donate.html">Donate</a>
+    <a href="Location.html">Location</a>
+    <a href="log in.html" style="margin-top:10px;">Log In</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Welcome to Mafana Oganiza Bhoo</h2>
+      <p>We offer motivational content through photos, videos, and events to inspire a better life.</p>
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <p>- Motivational Videos<br>- Inspiring Pictures<br>- Events and Shows</p>
+    </section>
+    
+
+    <section class="image-section">
+      <section
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:mafanaabho@gmail.com">mafanaabho@gmail.com</a><br />
+        Phone: <a href="tel:+265997316129">+265 997 316 129</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Mafana Oganiza Bhoo
+  </footer>
+
+  <!-- Modal placeholders -->
+  <div id="njere" class="modal" aria-hidden="true">
+    <a href="#" class="close" aria-label="Close modal">&times;</a>
+    <img src="njere.png" alt="njere" />
+  </div>
+
+  <div id="otha" class="modal" aria-hidden="true">
+    <a href="#" class="close" aria-label="Close modal">&times;</a>
+    <img src="otha.png" alt="otha" />
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navMenu.classList.toggle('open');
+        menuToggle.classList.toggle('open');
+      }
+    });
+
+    // Animate hamburger to X
+    const spans = menuToggle.querySelectorAll('span');
+    function animateHamburger(open) {
+      if (open) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    }
+
+    menuToggle.addEventListener('click', () => {
+      animateHamburger(navMenu.classList.contains('open'));
+    });
+
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        animateHamburger(navMenu.classList.contains('open'));
+      }
+    });
+
+    // Modal close handlers
+    document.querySelectorAll('.modal .close').forEach((closeBtn) => {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeBtn.parentElement.style.display = 'none';
+        closeBtn.parentElement.setAttribute('aria-hidden', 'true');
+      });
+    });
+  </script>
+</body>
+</html>
+

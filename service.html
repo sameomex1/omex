@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mafana Onganiza Bhoo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1a1a1a, #2c2c2c);
+      color: #f1f1f1;
+    }
+
+    header {
+      background-color: #0e3d0e;
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 5px 0 10px;
+      font-size: 0.95rem;
+      color: #cccccc;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-btn, .dropdown-btn {
+      background-color: #ff4e50;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .nav-btn:hover, .dropdown-btn:hover {
+      background-color: #e5373f;
+      transform: scale(1.05);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      z-index: 1001;
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    section {
+      margin: 30px auto;
+      margin-top: 80px;
+      padding: 25px;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #90ee90;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    section a {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    section a:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      section {
+        margin: 20px 15px;
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MAFANA ONGANIZA BHOOO</h1>
+    <p>Your Number One Vibes Source</p>
+    <nav>
+      <div class="nav-buttons">
+        <a href="fake home.html" class="nav-btn">Home</a>
+        <a href="about.html" class="nav-btn">About</a>
+        <a href="service.html" class="nav-btn">Services</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">More</button>
+          <div class="dropdown-content">
+            <a href="Contact.html">Contact</a>
+            <a href="fake image.html">Gallery</a>
+            <a href="Location.html">Location</a>
+            <a href="Help center.html">Help Center</a>
+            <a href="Donate.html">Donate</a>
+          </div>
+        </div>
+
+        <a href="log in.html" class="nav-btn">Log In</a>
+        <a href="sign up.html" class="nav-btn">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h2>WELCOME MAFANA ONGANIZA</h2>
+    <p>We provide good chills to Mafana Oganiza Bhoo. Vibes, Services, Style, and Swag — all under one roof.</p>
+    <a href="log in.html">Log In</a>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <p>
+      - Consulting<br>
+      - Design<br>
+      - Maintenance<br>
+      - Social Promotion<br>
+      - Event Management
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      Email: omexblack@gmail.com<br>
+      Phone: 099 731 6129<br>
+      Instagram: @mafana_bhoo
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Mafana Onganiza Bhoo. Designed by Omex
+  </footer>
+
+</body>
+</html>
+

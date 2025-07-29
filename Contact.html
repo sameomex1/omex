@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mafana Oganiza Bhooo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(1, 15, 1);
+      color: white;
+    }
+
+    header {
+      background-color: rgb(6, 6, 51);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .nav-btn {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: blue;
+      transform: scale(1.05);
+    }
+
+    .menu-button {
+      background-color: white;
+      color: black;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 150px;
+      top: 100px;
+      left: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    main {
+      padding-top: 160px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section-box:hover,
+    .section-box:focus-within{
+    transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.9);
+    }
+    
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .dropdown-content {
+        left: 0;
+        right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CONTACT</h1>
+  <nav>
+    <div class="nav-buttons">
+      <a href="fake home.html" class="nav-btn">Home</a>
+      <a href="about.html" class="nav-btn">About</a>
+      <a href="service.html" class="nav-btn">Services</a>
+      <a href="contact.html" class="nav-btn">Contact</a>
+      <a href="login.html" class="nav-btn">Log In</a>
+      <a href="Help center.html" class="nav-btn">Help Center</a>
+    </div>
+  </nav>
+  <button class="menu-button" onclick="toggleDropdown()">Menu</button>
+</header>
+
+<!-- Dropdown placed outside of fixed header -->
+<div class="dropdown-content" id="dropdownMenu">
+  <a href="Help center.html">Help Center</a>
+  <a href="login.html">Log In</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main>
+  <section class="section-box">
+    <h2>Welcome to Mafana Oganiza Bhooo</h2>
+    <p>We provide good chills and creative ideas for Mafana Oganiza Bhooo.</p>
+  </section>
+
+  <section class="section-box">
+    <h2>Log In</h2>
+    <p><a href="login.html">Click here to log in to your account</a></p>
+  </section>
+
+  <section class="section-box">
+    <h2>Follow Us on Facebook</h2>
+    <p><a href="https://web.facebook.com/living.eg.nd" target="_blank">Visit our Facebook Page</a></p>
+  </section>
+
+  <section class="section-box">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:omexblack@gmail.com">omexblack@gmail.com</a><br>
+       Phone: <a href="tel:+265997316129">099 731 6129</a></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Mafana Oganiza Bhooo. All rights reserved.
+</footer>
+
+<script>
+  function toggleDropdown() {
+    var menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
+
+
+
